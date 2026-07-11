@@ -1,0 +1,28 @@
+name: Deploy to CloudHub 2.0
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          server-id: anypoint-exchange-v3
+          server-username: ANYPOINT_USERNAME
+          server-password: ANYPOINT_PASSWORD
+      - name: Publish to Exchange
+        env:
+          ANYPOINT_USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
+          ANYPOINT_PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
+        run: mvn clean deploy
+      - name: Deploy to CloudHub 2.0
+        env:
+          ANYPOINT_USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
+          ANYPOINT_PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
+        run: mvn deploy -DmuleDeploy
