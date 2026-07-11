@@ -16,15 +16,8 @@ jobs:
           server-id: anypoint-exchange-v3
           server-username: ANYPOINT_USERNAME
           server-password: ANYPOINT_PASSWORD
-      - name: Publish to Exchange
+      - name: Publish and Deploy to CloudHub 2.0
         env:
           ANYPOINT_USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
           ANYPOINT_PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
-        run: mvn clean deploy
-      - name: Wait for Exchange to index
-        run: sleep 30
-      - name: Deploy to CloudHub 2.0
-        env:
-          ANYPOINT_USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
-          ANYPOINT_PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
-        run: mvn deploy -DmuleDeploy
+        run: mvn clean deploy -DmuleDeploy
