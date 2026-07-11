@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>0b21b48b-0f7d-4758-bfab-25396c97e6fe</groupId>
-	<artifactId>analysis-2</artifactId>
+	<artifactId>analysis-2-app</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
