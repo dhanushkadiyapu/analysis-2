@@ -4,16 +4,16 @@
 
 	<groupId>0b21b48b-0f7d-4758-bfab-25396c97e6fe</groupId>
 	<artifactId>analysis-2-app</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>analysis-2</name>
+	<name>analysis-2-app</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.10.1</app.runtime>
+		<app.runtime>4.12.1</app.runtime>
 		<mule.maven.plugin.version>4.6.1</mule.maven.plugin.version>
 	</properties>
 
